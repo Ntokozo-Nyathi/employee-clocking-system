@@ -1,0 +1,454 @@
+/* ================================
+   FLEET BIOMETRIC CLOCKING SYSTEM
+   PROFESSIONAL STYLE
+================================ */
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+    min-height: 100vh;
+}
+
+/* ================================
+   HEADER
+================================ */
+
+.header {
+    background: #0f3d63;
+    color: white;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.system-status {
+    background: #16a34a;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+
+.container {
+    width: 95%;
+    max-width: 950px;
+    margin: 30px auto;
+}
+
+/* ================================
+   WELCOME SECTION
+================================ */
+
+.welcome {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.welcome h1 {
+    color: #0f3d63;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    color: #64748b;
+    font-size: 16px;
+}
+
+/* ================================
+   CARDS
+================================ */
+
+.card {
+    background: white;
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.08);
+    border: 1px solid #e2e8f0;
+}
+
+.card h2 {
+    color: #0f3d63;
+    margin-bottom: 20px;
+    font-size: 21px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 12px;
+}
+
+/* ================================
+   FORM
+================================ */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label,
+.inspection-item label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+    color: #334155;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #f8fafc;
+    outline: none;
+    transition: 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #2563eb;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* ================================
+   INSPECTION
+================================ */
+
+.inspection-info {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.inspection-item {
+    margin-bottom: 16px;
+}
+
+.inspection-item select {
+    cursor: pointer;
+}
+
+/* ================================
+   PHOTO SECTION
+================================ */
+
+.photo-section {
+    background: #f8fafc;
+    border: 2px dashed #94a3b8;
+    border-radius: 12px;
+    padding: 22px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.photo-section h3 {
+    color: #0f3d63;
+    margin-bottom: 8px;
+}
+
+.photo-section p {
+    color: #64748b;
+    margin-bottom: 15px;
+}
+
+.photo-section input[type="file"] {
+    background: white;
+    cursor: pointer;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+
+.btn {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.08);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* BIOMETRIC */
+.biometric-btn {
+    background: #7c3aed;
+}
+
+/* INSPECTION */
+.inspection-btn {
+    background: #0f766e;
+}
+
+/* CLOCK IN */
+.clock-in {
+    background: #16a34a;
+}
+
+/* CLOCK OUT */
+.clock-out {
+    background: #dc2626;
+}
+
+/* ================================
+   TIME CARD
+================================ */
+
+.time-card {
+    background: #0f3d63;
+    color: white;
+    text-align: center;
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.15);
+}
+
+.time-card p:first-child {
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+.time-card h2 {
+    font-size: 42px;
+    margin: 8px 0;
+    letter-spacing: 2px;
+}
+
+#currentDate {
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+/* ================================
+   STATUS
+================================ */
+
+.status {
+    background: #eff6ff;
+    color: #1d4ed8;
+    padding: 14px;
+    border-radius: 8px;
+    border-left: 5px solid #2563eb;
+    font-weight: 500;
+}
+
+.status.success {
+    background: #f0fdf4;
+    color: #15803d;
+    border-left-color: #16a34a;
+}
+
+.status.error {
+    background: #fef2f2;
+    color: #b91c1c;
+    border-left-color: #dc2626;
+}
+
+/* ================================
+   RECORDS
+================================ */
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.section-heading h2 {
+    flex: 1;
+}
+
+.clear-btn {
+    background: #64748b;
+    color: white;
+    border: none;
+    padding: 9px 13px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.clear-btn:hover {
+    background: #475569;
+}
+
+.empty-records {
+    text-align: center;
+    color: #94a3b8;
+    padding: 20px;
+}
+
+/* ================================
+   RECORD ITEM
+================================ */
+
+.record {
+    background: #f8fafc;
+    border-left: 5px solid #2563eb;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 12px;
+}
+
+.record strong {
+    color: #0f3d63;
+}
+
+.record p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    background: #0f3d63;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px;
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+/* ================================
+   MOBILE PHONE
+================================ */
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .system-status {
+        font-size: 11px;
+        padding: 6px 9px;
+    }
+
+    .container {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    .welcome h1 {
+        font-size: 25px;
+    }
+
+    .welcome p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .card {
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    .card h2 {
+        font-size: 18px;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+        padding: 13px;
+    }
+
+    .btn {
+        padding: 16px;
+        font-size: 16px;
+    }
+
+    .time-card {
+        padding: 20px;
+    }
+
+    .time-card h2 {
+        font-size: 34px;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .clear-btn {
+        width: 100%;
+    }
+
+    footer {
+        padding: 20px 10px;
+    }
+}
+
+/* ================================
+   LARGE SCREENS
+================================ */
+
+@media (min-width: 800px) {
+
+    .inspection-item {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .inspection-item label {
+        margin-bottom: 0;
+    }
+}
