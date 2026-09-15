@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fleet Biometric Clocking System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">🚚 Fleet Clocking</div>
+    <div class="system-status">● System Online</div>
+</header>
+
+<main class="container">
+
+    <!-- WELCOME -->
+    <section class="welcome">
+        <h1>Fleet Biometric Clocking System</h1>
+        <p>
+            Secure employee clocking with biometrics,
+            GPS location and vehicle inspections.
+        </p>
+    </section>
+
+
+    <!-- EMPLOYEE REGISTRATION -->
+    <section class="card">
+
+        <h2>👤 Employee Registration</h2>
+
+        <div class="form-group">
+            <label for="employeeId">Employee ID</label>
+            <input
+                type="text"
+                id="employeeId"
+                placeholder="Enter employee ID">
+        </div>
+
+        <div class="form-group">
+            <label for="employeeName">Employee Name</label>
+            <input
+                type="text"
+                id="employeeName"
+                placeholder="Enter employee name">
+        </div>
+
+        <div class="form-group">
+            <label for="vehicleNumber">
+                Vehicle / Fleet Number
+            </label>
+
+            <input
+                type="text"
+                id="vehicleNumber"
+                placeholder="Example: TRUCK-001">
+        </div>
+
+        <button
+            class="btn"
+            onclick="registerEmployee()">
+            👤 Register Employee
+        </button>
+
+        <button
+            class="btn biometric-btn"
+            onclick="registerBiometric()">
+            👆 Register Biometrics / Face ID
+        </button>
+
+    </section>
+
+
+    <!-- VEHICLE INSPECTION -->
+    <section class="card">
+
+        <h2>🚛 Vehicle Condition Inspection</h2>
+
+        <p class="inspection-info">
+            Complete the vehicle inspection before clocking in.
+        </p>
+
+        <div class="form-group">
+            <label for="inspectionVehicle">
+                Vehicle / Fleet Number
+            </label>
+
+            <input
+                type="text"
+                id="inspectionVehicle"
+                placeholder="Enter vehicle number">
+        </div>
+
+
+        <!-- FUEL -->
+        <div class="inspection-item">
+            <label for="fuel">⛽ Fuel Level</label>
+
+            <select id="fuel">
+                <option value="">Select fuel level</option>
+                <option value="Full">Full</option>
+                <option value="3/4">3/4</option>
+                <option value="1/2">1/2</option>
+                <option value="1/4">1/4</option>
+                <option value="Empty">Empty</option>
+            </select>
+        </div>
+
+
+        <!-- TYRES -->
+        <div class="inspection-item">
+            <label for="tyres">🛞 Tyres</label>
+
+            <select id="tyres">
+                <option value="">Select condition</option>
+                <option value="Good">Good</option>
+                <option value="Needs Attention">
+                    Needs Attention
+                </option>
+                <option value="Damaged">Damaged</option>
+            </select>
+        </div>
+
+
+        <!-- LIGHTS -->
+        <div class="inspection-item">
+            <label for="lights">💡 Lights</label>
+
+            <select id="lights">
+                <option value="">Select condition</option>
+                <option value="Good">Good</option>
+                <option value="Needs Attention">
+                    Needs Attention
+                </option>
+                <option value="Damaged">Damaged</option>
+            </select>
+        </div>
+
+
+        <!-- MIRRORS -->
+        <div class="inspection-item">
+            <label for="mirrors">🪞 Mirrors</label>
+
+            <select id="mirrors">
+                <option value="">Select condition</option>
+                <option value="Good">Good</option>
+                <option value="Needs Attention">
+                    Needs Attention
+                </option>
+                <option value="Damaged">Damaged</option>
+            </select>
+        </div>
+
+
+        <!-- WINDOWS -->
+        <div class="inspection-item">
+            <label for="windows">
+                🪟 Windows / Windscreen
+            </label>
+
+            <select id="windows">
+                <option value="">Select condition</option>
+                <option value="Good">Good</option>
+                <option value="Needs Attention">
+                    Needs Attention
+                </option>
+                <option value="Damaged">Damaged</option>
+            </select>
+        </div>
+
+
+        <!-- BODY -->
+        <div class="inspection-item">
+            <label for="body">🚘 Vehicle Body</label>
+
+            <select id="body">
+                <option value="">Select condition</option>
+                <option value="Good">Good</option>
+                <option value="Needs Attention">
+                    Needs Attention
+                </option>
+                <option value="Damaged">Damaged</option>
+            </select>
+        </div>
+
+
+        <!-- ENGINE -->
+        <div class="inspection-item">
+            <label for="engine">
+                🔧 Engine / Mechanical
+            </label>
+
+            <select id="engine">
+                <option value="">Select condition</option>
+                <option value="Good">Good</option>
+                <option value="Needs Attention">
+                    Needs Attention
+                </option>
+                <option value="Damaged">Damaged</option>
+            </select>
+        </div>
+
+
+        <!-- BRAKES -->
+        <div class="inspection-item">
+            <label for="brakes">🛑 Brakes</label>
+
+            <select id="brakes">
+                <option value="">Select condition</option>
+                <option value="Good">Good</option>
+                <option value="Needs Attention">
+                    Needs Attention
+                </option>
+                <option value="Damaged">Damaged</option>
+            </select>
+        </div>
+
+
+        <!-- DAMAGE -->
+        <div class="form-group">
+
+            <label for="damage">
+                ⚠️ Damage / Faults Found
+            </label>
+
+            <textarea
+                id="damage"
+                rows="4"
+                placeholder="Describe any damage, faults or problems found...">
+            </textarea>
+
+        </div>
+
+
+        <!-- MULTIPLE VEHICLE PHOTOS -->
+        <div class="photo-section">
+
+            <h3>📷 Vehicle Photos</h3>
+
+            <p>
+                Take multiple photos of the vehicle
+                or any visible damage.
+            </p>
+
+            <input
+                type="file"
+                id="vehiclePhotos"
+                name="vehiclePhotos[]"
+                accept="image/*"
+                capture="environment"
+                multiple>
+
+        </div>
+
+
+        <!-- OVERALL CONDITION -->
+        <div class="inspection-item">
+
+            <label for="overallCondition">
+                Overall Vehicle Condition
+            </label>
+
+            <select id="overallCondition">
+
+                <option value="">
+                    Select overall condition
+                </option>
+
+                <option value="Good">
+                    ✅ Good
+                </option>
+
+                <option value="Needs Attention">
+                    ⚠️ Needs Attention
+                </option>
+
+                <option value="Damaged">
+                    ❌ Damaged
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            class="btn inspection-btn"
+            onclick="saveInspection()">
+            ✅ Save Vehicle Inspection
+        </button>
+
+    </section>
+
+
+    <!-- EMPLOYEE CLOCKING -->
+    <section class="card">
+
+        <h2>🕐 Employee Clocking</h2>
+
+        <div class="form-group">
+
+            <label for="clockEmployeeId">
+                Employee ID
+            </label>
+
+            <input
+                type="text"
+                id="clockEmployeeId"
+                placeholder="Enter employee ID">
+
+        </div>
+
+
+        <button
+            class="btn clock-in"
+            onclick="clockIn()">
+            🟢 Clock In
+        </button>
+
+
+        <button
+            class="btn clock-out"
+            onclick="clockOut()">
+            🔴 Clock Out
+        </button>
+
+    </section>
+
+
+    <!-- LIVE TIME -->
+    <section class="time-card">
+
+        <p>Current Time</p>
+
+        <h2 id="currentTime">
+            00:00:00
+        </h2>
+
+        <p id="currentDate">
+            Loading date...
+        </p>
+
+    </section>
+
+
+
+    <!-- ATTENDANCE RECORDS -->
+    <section class="card">
+
+        <div class="section-heading">
+
+            <h2>📋 Attendance Records</h2>
+
+            <button
+                class="clear-btn"
+                onclick="clearRecords()">
+                Clear Records
+            </button>
+
+        </div>
+
+
+        <div id="recordsContainer">
+
+            <p class="empty-records">
+                No attendance records yet.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>🚚 Fleet Biometric Clocking System</p>
+
+    <p>
+        Secure • Simple • Reliable
+    </p>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+<script src="script.js"></script>
+
+</body>
+</html>
